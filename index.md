@@ -1,45 +1,41 @@
 # Zyven Privacy Policy
 
-**Effective date: November 12, 2026**  
-**Maintained by: Soulhuiyaar**
+**Effective date: November 21, 2026**
 
-Zyven is a Discord bot maintained by Soulhuiyaar. This policy explains what data Zyven accesses, why it uses it, where it may be stored or sent, how long it is kept, and how to request deletion.
+Zyven is a multipurpose Discord bot developed by Zyven Development. This policy describes information the bot may process when it is added to a Discord server, how that information is used and stored, and how to ask questions or request deletion. Features vary by server configuration.
 
-## Data Zyven accesses
+## Information Zyven processes
 
-Depending on server features, Zyven may access or store:
+Depending on the features a server enables, Zyven may process:
 
-- Discord user, server, channel, role, and message IDs needed for commands and features. Display names may appear in replies and logs.
-- Server configuration, including command prefix, selected channels and roles, welcome settings, moderation and security settings, and feature preferences.
-- Moderation and security records such as warnings, timed actions, role or channel recovery data, and configured event logs.
-- Message text to recognize prefix commands and run enabled AutoMod, anti-spam, link filters, or autoresponders. Zyven does not keep a general archive of all server messages. If event logging is configured, edited or deleted message content may be posted to the selected Discord log channel.
-- Current presence or activity for status commands, presence counts, and optional custom-status role features. This is not saved as a presence history.
-- AI prompts and limited conversation context only when an administrator enables the AI feature or a user invokes an AI command. Users can clear saved context with the ?ai clear command in the relevant server and channel.
+- **Discord and server information:** Discord user, server, channel, role, and message IDs; usernames and display names; avatars; member roles and join times; and server configuration.
+- **Member and presence information:** join, leave, role, and moderation events, and member or server counts. If a server enables custom-status or vanity-role features, Zyven reads a member's custom status or presence as needed to apply or remove the configured role. Presence information is not needed for every feature.
+- **Message information:** message text to recognize prefix commands and provide configured features such as AutoMod, anti-spam, autoresponders, autoreactions, leveling, and AI chat. If a server enables message event logging, edited or deleted message text and available attachment links may be sent to that server's configured log channel. Server administrators choose those channels and manage their access.
+- **Feature records:** moderation actions and warnings, audit and security events, server settings, trusted-member lists, leveling records, tickets, voice or music settings, and other preferences needed for enabled features.
+- **AI conversations:** when AI features are enabled and used, prompts and relevant recent conversation context are sent to Groq's API to generate replies. Zyven stores a limited recent conversation history and AI preferences so a conversation can continue with context. Users can clear saved AI conversation data using the available AI clear command. Server administrators can disable automatic AI replies.
 
-Zyven does not need Discord passwords, payment card details, or home addresses.
+## How information is used
 
-## Use and sharing
+Zyven uses this information to respond to commands, provide configured server features, apply administrator-selected moderation and security rules, manage roles, preserve settings and progress, operate music and AI features, troubleshoot errors, and prevent abuse.
 
-Zyven uses data to respond to commands, apply administrator-configured features, protect and moderate servers, maintain settings and records, and troubleshoot reliability or abuse. Message content is not used by Zyven to train or fine-tune AI models. When AI is used, the relevant prompt and limited context are sent to Groq. Groq says prompts and outputs are not retained by default, but may be temporarily logged for reliability or abuse monitoring for up to 30 days unless Zero Data Retention is enabled. See [Groq data retention](https://console.groq.com/docs/your-data).
+## Storage and service providers
 
-## Storage and providers
+Zyven stores feature settings and records in SQLite on the bot operator's host. When configured, it also mirrors records to MongoDB for persistence and recovery. The operator may keep database snapshots for recovery. The bot operator and the hosting and database providers may process stored information.
 
-Zyven uses local SQLite storage. A deployment may also mirror data to MongoDB for persistence and recovery, and may keep compressed database snapshots there. Deleted data may remain in a snapshot until it is replaced. Discord processes data under its own terms and privacy policy. Groq receives AI prompts only when AI is used. Optional music or other integrations may receive the relevant search query or URL.
+Zyven communicates with Discord to receive permitted events and perform bot actions. AI prompts are sent to Groq when AI features are used. Music searches or playback requests may be sent to the Lavalink service configured by the operator. Other external services may process information needed for a feature when that feature is enabled; those services have their own terms and privacy practices.
 
 ## Retention and deletion
 
-There is no single automatic expiry period for every record. Data is kept while needed for the feature or server configuration that created it. Warning records remain until removed by a moderator; AI context remains until cleared; settings remain until reset or removed. Backups may retain deleted records until the next snapshot replaces them.
+There is no single retention period for every kind of information. Feature settings and records may remain while needed to provide the feature or until a user, server administrator, or bot operator clears them. A deleted record may remain in a recovery snapshot until that snapshot is replaced or removed. Message logs posted to a Discord channel are controlled by that server's administrators and Discord's own features.
 
-To clear AI context, run ?ai clear in the same server and channel. To request access to or deletion of other Zyven data, contact **Soulhuiyaar** in the [Zyven Support Server](https://discord.gg/gm6pAGpNGu). Include the relevant server ID, your Discord user ID, and the data type. Requests will be handled as promptly as storage and backups allow. A server administrator may need to remove server settings or moderation records. To stop using Zyven, ask an administrator to remove the bot. Presence features have no individual opt-out; an administrator can disable the feature or remove the bot.
+For questions or a deletion request about information stored by Zyven, contact the operators in the [Zyven support server](https://discord.gg/gm6pAGpNGu). Include the relevant Discord user or server ID and identify the feature or record. For message logs in a server channel, contact that server's administrators. Limited information may need to be retained for security, abuse prevention, backup recovery, or legal obligations.
 
 ## Security
 
-Zyven limits access to data needed by its features and uses administrative and technical safeguards. The source uses standard SQLite and does not itself encrypt database files. Encryption at rest depends on hosting and database configuration. **The maintainer has not verified encryption at rest for every active storage location and backup.** This policy does not claim that the current deployment is encrypted at rest.
-
-For a suspected unauthorized access or disclosure, contact Soulhuiyaar through the [Zyven Support Server](https://discord.gg/gm6pAGpNGu).
+The bot's SQLite database files are not encrypted by Zyven itself. Encryption may depend on the host or database provider's configuration, and the operator has not verified encryption at rest for every active storage location and backup. The operator uses measures intended to protect bot data, but no online service or data transmission can be guaranteed completely secure.
 
 ## Changes and contact
 
-This policy may change when Zyven's features, storage, or providers change. The current version remains available here. For privacy questions or requests, contact Soulhuiyaar through the [Zyven Support Server](https://discord.gg/gm6pAGpNGu).
+This policy may change when Zyven's features or data practices change. The current version will be available at this page. For privacy questions, contact the Zyven operators through the [support server](https://discord.gg/gm6pAGpNGu).
 
-Zyven is independent and is not affiliated with or endorsed by Discord or Groq.
+This notice describes Zyven's current source code and configured integrations as reviewed on November 21, 2026. Third-party providers are governed by their own policies and terms. This notice is not legal advice.
